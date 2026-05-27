@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply | Vareya University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">VAREYA UNIVERSITY<a href="uni.html"></a></div>
+</header>
+
+<main class="apply-container">
+
+  <!-- Progress -->
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Form -->
+  <form id="applicationForm">
+
+    <section class="step active">
+  <h2>Personal Information</h2>
+
+  <div class="field">
+    <label>Full Name</label>
+    <input type="text" id="fullName" name="fullname" required>
+  </div>
+
+  <div class="field">
+    <label>Email Address</label>
+    <input type="email" id="emailAddress" name="email" required>
+  </div>
+
+  <div class="field">
+    <label>Date of Birth</label>
+    <input type="date" required>
+  </div>
+
+  <button type="button" class="next">Next</button>
+</section>
+
+    <!-- STEP 2 -->
+    <section class="step">
+      <h2>Academic Background</h2>
+
+      <div class="field">
+        <label>Highest Qualification</label>
+        <select required>
+          <option value="">Select</option>
+          <option>WASSCE</option>
+          <option>NECO</option>
+          <option>GCE</option>
+          <option>Others</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Institution Attended</label>
+        <input type="text" required>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="back">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step">
+      <h2>Program Selection</h2>
+
+      <div class="field">
+        <label>Program Type</label>
+        <select required>
+          <option value="">Select</option>
+          <option>Pre-degree</option>
+          <option>Undergraduate</option>
+          <option>Postgraduate</option>
+          <option>PhD</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Preferred Course of Study</label>
+        <input type="text" required>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="back">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step">
+      <h2>Upload Documents</h2>
+
+      <div class="field">
+        <label>WASSCE/NECO/GCE Results</label>
+        <input type="file" required>
+      </div>
+
+      <div class="field">
+        <label>JAMB Result</label>
+        <input type="file" required>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="back">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+    </section>
+
+   <!-- STEP 5: Payment -->
+<section class="step">
+  <h2>Application Fee Payment</h2>
+
+  <p class="fee-note">
+    Application Fee: <strong>₦3,000</strong> (Non-refundable)
+  </p>
+
+  <div class="field">
+    <label>Card Number</label>
+    <input type="text" placeholder="1234 5678 9012 3456" required>
+  </div>
+
+  <div class="field">
+    <label>Expiry Date</label>
+    <input type="month" required>
+  </div>
+
+  <div class="field">
+    <label>CVV</label>
+    <input type="password" maxlength="4" required>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="back">Back</button>
+    <button type="button" class="next">Proceed</button>
+  </div>
+</section>
+
+<!-- STEP 6: Review & Submit -->
+<section class="step">
+  <h2>Confirm & Submit</h2>
+
+  <p>
+    By submitting this application, you confirm that all provided
+    information is accurate and complete.
+  </p>
+
+  <div class="actions">
+    <button type="button" class="back">Back</button>
+    <button type="submit" class="submit">Submit Application</button>
+  </div>
+</section>
+
+<!-- STEP 7: SUCCESS -->
+<section class="step success-step">
+  <div class="success-box">
+    <div class="checkmark">✓</div>
+    <h2>Application Successful</h2>
+    <p id="successName"></p>
+    <p class="success-note">
+      Your application has been received by Vareya University.
+      Further communication will be sent via email.
+    </p>
+  </div>
+</section>
+
+
+  </form>
+
+</main>
+
+<script src="apply.js"></script>
+</body>
+</html>

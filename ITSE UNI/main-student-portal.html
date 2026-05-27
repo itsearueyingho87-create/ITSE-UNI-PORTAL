@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal | Vareya University</title>
+  <link rel="stylesheet" href="student-portal-main.css"/>
+  <script src="https://kit.fontawesome.com/d5bfae2159.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="portal-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <h2>VAREYA</h2>
+      <span>Student Portal</span>
+    </div>
+
+    <nav class="menu" id="menu">
+      <a href="#overview" class="active" data-target="overview"><i class="fas fa-home"></i> Overview</a>
+      <a href="#courses" data-target="courses"><i class="fas fa-book"></i> My Courses</a>
+      <a href="#results" data-target="results"><i class="fas fa-chart-bar"></i> Results</a>
+      <a href="#timetable" data-target="timetable"><i class="fas fa-calendar-alt"></i> Timetable</a>
+      <a href="#fees" data-target="fees"><i class="fas fa-wallet"></i> Fees & Finance</a>
+      <a href="#profile" data-target="profile"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <div class="logout-container">
+      <button class="logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-wrapper">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <div class="topbar-title" id="pageTitle">Dashboard Overview</div>
+      </div>
+      
+      <div class="topbar-right">
+        <div class="notification-bell">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="profile-dropdown">
+          <div class="profile-info" style="text-align: right;">
+            <strong id="student-name">Alex Johnson</strong>
+            <small id="student-matric">VU/2023/1029</small>
+          </div>
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Profile">
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <div class="content" id="content-area">
+
+      <!-- OVERVIEW SECTION -->
+      <section id="overview" class="section active">
+        <div class="grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-graduation-cap"></i></div>
+            <div class="stat-details">
+              <h4>Current GPA</h4>
+              <p>3.84</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-book-open"></i></div>
+            <div class="stat-details">
+              <h4>Registered Courses</h4>
+              <p>7</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fas fa-coins"></i></div>
+            <div class="stat-details">
+              <h4>Outstanding Fees</h4>
+              <p>₦0.00</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-layer-group"></i></div>
+            <div class="stat-details">
+              <h4>Academic Level</h4>
+              <p>300 Level</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Announcements</h3>
+          </div>
+          <ul style="list-style: none;">
+            <li style="padding: 15px 0; border-bottom: 1px solid var(--border);">
+              <strong>End of Semester Exams</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">The final examination timetable for the Fall semester has been published.</p>
+            </li>
+            <li style="padding: 15px 0;">
+              <strong>Course Registration Deadline</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">A reminder that all course registrations must be completed by Friday, 6th Nov.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- COURSES SECTION -->
+      <section id="courses" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Register New Course</h3>
+          </div>
+          <form id="course-form" class="inline-form">
+            <input type="text" placeholder="Course Code (e.g. CSC301)" id="courseCode" required>
+            <input type="text" placeholder="Course Title" id="courseTitle" required>
+            <input type="number" placeholder="Units (e.g. 3)" id="courseUnits" min="1" max="6" required>
+            <button type="submit" class="btn-primary">Add Course</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>My Registered Courses</h3>
+          </div>
+          <div style="overflow-x: auto;">
+            <table id="course-table">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Title</th>
+                  <th>Units</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS SECTION -->
+      <section id="results" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Latest Academic Results</h3>
+            <button class="btn-primary"><i class="fas fa-download"></i> Download Transcript</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Title</th>
+                  <th>Score</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CSC201</td>
+                  <td>Data Structures</td>
+                  <td>85</td>
+                  <td><span class="badge a">A</span></td>
+                </tr>
+                <tr>
+                  <td>CSC203</td>
+                  <td>Algorithms</td>
+                  <td>78</td>
+                  <td><span class="badge b">B</span></td>
+                </tr>
+                <tr>
+                  <td>MTH201</td>
+                  <td>Linear Algebra</td>
+                  <td>65</td>
+                  <td><span class="badge c">C</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMETABLE SECTION -->
+      <section id="timetable" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Add Lecture Schedule</h3>
+          </div>
+          <form id="time-form" class="inline-form">
+            <input type="text" placeholder="Course Code" id="timeCourse" required>
+            <input type="text" placeholder="Day (e.g. Monday)" id="timeDay" required>
+            <input type="text" placeholder="Time (e.g. 10:00 AM)" id="timeTime" required>
+            <button type="submit" class="btn-primary">Add Time</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>My Weekly Timetable</h3>
+          </div>
+          <div style="overflow-x: auto;">
+            <table id="timetable-table">
+              <thead>
+                <tr>
+                  <th>Course</th>
+                  <th>Day</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEES SECTION -->
+      <section id="fees" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Financial Statement</h3>
+            <button class="btn-primary"><i class="fas fa-credit-card"></i> Make Payment</button>
+          </div>
+          <div class="fees-grid">
+            <div class="fee-item">
+              <span>Total Payable</span>
+              <strong id="fee-total">₦450,000</strong>
+            </div>
+            <div class="fee-item">
+              <span>Amount Paid</span>
+              <strong class="paid" id="fee-paid">₦450,000</strong>
+            </div>
+            <div class="fee-item">
+              <span>Outstanding Balance</span>
+              <strong class="due" id="fee-balance">₦0.00</strong>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3>Payment History</h3>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Oct 10, 2023</td>
+                  <td>Tuition Fee (Fall Semester)</td>
+                  <td>₦450,000</td>
+                  <td><span class="badge a">Successful</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFILE SECTION -->
+      <section id="profile" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Student Information</h3>
+          </div>
+          <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Profile Large" style="width: 150px; height: 150px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            
+            <div style="flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Full Name</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">Alex Johnson</p>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Matriculation Number</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">VU/2023/1029</p>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Faculty</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">Computing & AI</p>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Department</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">Computer Science</p>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Email Address</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">alex.j@vareya.edu.ng</p>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Phone Number</span>
+                <p style="font-weight: 500; font-size: 1.1rem; margin-top: 5px;">+234 800 123 4567</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="student-portal-main.js"></script>
+</body>
+</html>

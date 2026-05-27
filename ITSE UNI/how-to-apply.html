@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions | Vareya University</title>
+  <meta name="description" content="Apply to Vareya University: Pre-degree, Undergraduate, Postgraduate, and PhD Programs. Your future starts here." />
+
+  <link rel="stylesheet" href="admission.css" />
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">VAREYA UNIVERSITY</div>
+</header>
+
+
+
+<main>
+  <!-- HERO -->
+  <section class="hero admissions-hero">
+    <div class="hero-text">
+      <h1>Admissions at Vareya University</h1>
+      <p>Join a community of innovators, leaders, and thinkers. Explore our programs and start your journey today.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO APPLY -->
+  <section id="how-to-apply" class="section">
+    <h2>How to Apply</h2>
+    <p>
+      Applying to Vareya University is simple, fast, and fully online. Follow these steps to secure your place:
+    </p>
+    <ul class="steps">
+      <li>Choose your program of interest.</li>
+      <li>Complete the online application form.</li>
+      <li>Upload required academic documents and credentials.</li>
+      <li>Pay the application fee securely online.</li>
+      <li>Submit your application and track its status.</li>
+    </ul>
+    <a href="apply.html" class="btn-primary">Start Your Application</a>
+  </section>
+
+  <!-- PROGRAM TYPES -->
+  <section class="section programs-section">
+    <h2>Programs Offered</h2>
+    <div class="programs-grid">
+
+      <!-- Pre-degree -->
+      <div class="program-card predegree">
+        <div class="program-icon">🎓</div>
+        <h3>Pre-Degree</h3>
+        <p>Prepare for university-level study with foundational courses, skills training, and academic mentoring.</p>
+        <a href="#predegree-details" class="btn-secondary">Learn More</a>
+      </div>
+
+      <!-- B.Sc -->
+      <div class="program-card bsc">
+        <div class="program-icon">📚</div>
+        <h3>B.Sc / Undergraduate</h3>
+        <p>Choose from a wide range of undergraduate programs designed to develop critical thinking and leadership skills.</p>
+        <a href="#bsc-details" class="btn-secondary">Learn More</a>
+      </div>
+
+      <!-- Postgraduate -->
+      <div class="program-card postgraduate">
+        <div class="program-icon">🎓✨</div>
+        <h3>Postgraduate</h3>
+        <p>Enhance your career prospects with advanced courses, research opportunities, and professional development.</p>
+        <a href="#postgrad-details" class="btn-secondary">Learn More</a>
+      </div>
+
+      <!-- PhD -->
+      <div class="program-card phd">
+        <div class="program-icon">🧠</div>
+        <h3>PhD / Research</h3>
+        <p>Pursue original research, contribute to global knowledge, and work closely with world-class faculty.</p>
+        <a href="#phd-details" class="btn-secondary">Learn More</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROGRAM DETAILS (Expandable Cards) -->
+  <section class="section details-section">
+    <div id="predegree-details" class="program-detail">
+      <h3>Pre-Degree Program</h3>
+      <p>Our pre-degree program is designed to prepare students for academic success. It includes foundation courses, critical thinking, and mentorship.</p>
+    </div>
+
+    <div id="bsc-details" class="program-detail">
+      <h3>B.Sc / Undergraduate</h3>
+      <p>Undergraduate students gain deep knowledge in their chosen field, supported by practical labs, internships, and research opportunities.</p>
+    </div>
+
+    <div id="postgrad-details" class="program-detail">
+      <h3>Postgraduate</h3>
+      <p>Postgraduate studies combine advanced coursework with applied research to prepare graduates for leadership roles.</p>
+    </div>
+
+    <div id="phd-details" class="program-detail">
+      <h3>PhD / Research</h3>
+      <p>PhD candidates undertake rigorous original research, collaborate internationally, and contribute to knowledge in their fields.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Vareya University. All rights reserved.</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const dropdowns = document.querySelectorAll(".dropdown");
+
+// Toggle mobile nav
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("show");
+});
+
+// Toggle dropdowns on mobile
+dropdowns.forEach(drop => {
+  drop.querySelector(".drop-btn").addEventListener("click", e => {
+    if(window.innerWidth <= 900) {
+      e.preventDefault();
+      drop.classList.toggle("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

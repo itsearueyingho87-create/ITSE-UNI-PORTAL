@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vareya UNI</title>
+    <link rel="stylesheet" href="uni.css">
+    <script src="https://kit.fontawesome.com/d5bfae2159.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <!-- Logo -->
+    <div class="logo">VAREYA</div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#Home">Home</a></li>
+
+            <!-- About Us Dropdown -->
+            <li class="dropdown">
+                <a href="AboutUs.html" class="drop-btn">About Us ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="AboutUs.html#vision">Vision & Mission</a></li>
+                  <li><a href="AboutUs.html#history">History</a></li>
+                  <li><a href="AboutUs.html#faculties">Faculties & Programs</a></li>
+                  <li><a href="AboutUs.html#accreditation">Accreditation</a></li>
+                  <li><a href="AboutUs.html#student-life">Student Life</a></li>
+                  <li><a href="AboutUs.html#values">Our Values</a></li>
+                  <li><a href="AboutUs.html#founders">University Leadership</a></li>
+                  <li><a href="AboutUs.html#achievements">Achievements & Awards</a></li>
+                  <li><a href="AboutUs.html#community">Community Engagement</a></li>
+                  <li><a href="AboutUs.html#campus">Campus Facilities</a></li>
+                  <li><a href="AboutUs.html#alumni">Alumni Success</a></li>
+                </ul>
+            </li>
+
+            <!-- Lifestyle Dropdown -->
+            <li class="dropdown">
+                <a href="#" class="drop-btn">Lifestyle ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#social">Social</a></li>
+                    <li><a href="#faculty">Colleges</a></li>
+                    <li><a href="#sports">Sports</a></li>
+                </ul>
+            </li>
+
+            <!-- Admission Dropdown -->
+            <li class="dropdown">
+                <a href="#" class="drop-btn">Admission ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="how-to-apply.html">How to Apply</a></li>
+                    <li><a href="post-graduate.html">Post-Graduate</a></li>
+                    <li><a href="pre-degree.html">Pre-Degree</a></li>
+                    <li><a href="bsc-phd.html">B.Sc / PhD</a></li>
+                </ul>
+            </li>
+
+            <!-- Portals Dropdown -->
+            <li class="dropdown">
+                <a href="#" class="drop-btn">Portals ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="student-portal.html">Student Portal</a></li>
+                    <li><a href="school-portal.html">School Portal</a></li>
+                </ul>
+            </li>
+
+            <!-- InsideVUN -->
+            <li><a href="inside-vun.html">InsideVUN</a></li>
+
+            <li><a href="#footer">Enquiry</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search -->
+    <div class="search-container">
+        <input type="text" placeholder="Search the galaxy..." class="search-input">
+        <div class="search-icon">🔍</div>
+        <div class="search-results"></div>
+    </div>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#Home">Home</a>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn">About Us ▾</button>
+            <div class="mobile-dropdown-content">
+                <a href="AboutUs.html#vision">Vision & Mission</a>
+                <a href="AboutUs.html#history">History</a>
+                <a href="AboutUs.html#faculties">Faculties & Programs</a>
+                <a href="AboutUs.html#accreditation">Accreditation</a>
+                <a href="AboutUs.html#student-life">Student Life</a>
+                <a href="AboutUs.html#values">Our Values</a>
+                <a href="AboutUs.html#founders">University Leadership</a>
+                <a href="AboutUs.html#achievements">Achievements & Awards</a>
+                <a href="AboutUs.html#community">Community Engagement</a>
+                <a href="AboutUs.html#campus">Campus Facilities</a>
+                <a href="AboutUs.html#alumni">Alumni Success</a>
+        </div>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn">Lifestyle ▾</button>
+            <div class="mobile-dropdown-content">
+                <a href="#social">Social</a>
+                <a href="#faculty">Colleges</a>
+                <a href="#sports">Sports</a>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn">Admission ▾</button>
+            <div class="mobile-dropdown-content">
+                <a href="how-to-apply.html">How to Apply</a>
+                <a href="post-graduate.html">Post-Graduate</a>
+                <a href="pre-degree.html">Pre-Degree</a>
+                <a href="bsc-phd.html">B.Sc / PhD</a>
+            </div>
+        </div>
+
+        <div class="mobile-dropdown">
+            <button class="mobile-drop-btn">Portals ▾</button>
+            <div class="mobile-dropdown-content">
+                <a href="student-portal.html">Student Portal</a>
+                <a href="school-portal.html">School Portal</a>
+            </div>
+        </div>
+
+        <a href="inside-vun.html">InsideVUN</a>
+        <a href="#footer">Enquiry</a>
+    </div>
+
+    <script>
+
+      // Hamburger Toggle
+      
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+});
+
+// Mobile dropdowns toggle
+const mobileDropBtns = document.querySelectorAll(".mobile-drop-btn");
+
+mobileDropBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.classList.toggle("show");
+    });
+});
+
+// Search bar toggle
+const searchIcon = document.querySelector(".search-icon");
+const searchInput = document.querySelector(".search-input");
+
+searchIcon.addEventListener("click", () => {
+    searchInput.classList.toggle("expand");
+    searchInput.focus();
+});
+    </script>
+</header>
+
+
+<!-- Hero Section -->
+<section class="Home" id="Home">
+    <div class="hero">
+  <div class="slides">
+
+    <!-- Slide 1 -->
+    <div class="slide slide1">
+      <div class="slide-content">
+        <div class="holo-image">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Vareya University Campus">
+        </div>
+        <h1>Welcome to Vareya University</h1>
+        <p>Where vision meets innovation.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide slide2">
+      <div class="slide-content">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Modern Classroom">
+        <h1>Where Learning Meets Excellence</h1>
+        <p>Perfection in every way.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide slide3">
+      <div class="slide-content">
+        <img src="https://images.unsplash.com/photo-1518605368461-1ee51161d154?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Students Playing Football">
+        <h1>All Work And No Play Makes Jack A Dull Boy</h1>
+        <p>A place to refresh your mind after a long day.</p>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide slide4">
+      <div class="slide-content">
+        <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Campus Chapel Worship">
+        <h1>We Raise True Worshippers</h1>
+        <p>A community where youths are genuine with the Lord.</p>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide slide5">
+      <div class="slide-content">
+        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Modern Student Hostel">
+        <h1>Good Hostel Accommodation</h1>
+        <p>Comfort, security, and excellence.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
+  </div>
+</div>
+
+</section>
+
+<section class="about-preview" id="about-preview">
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="about-header">
+      <h2>About Vareya University</h2>
+      <p>Shaping world-class leaders through innovation, excellence, and character.</p>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="about-content">
+      
+      <!-- Left Image -->
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1525926477800-7a3b10316ac6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Vareya University Campus Aerial">
+      </div>
+
+      <!-- Right Text -->
+      <div class="about-text">
+        <h3>Our Vision</h3>
+        <p>To be a leading private university, producing graduates who positively impact society through innovation, knowledge, and ethical leadership.</p>
+
+        <h3>Our Mission</h3>
+        <ul>
+          <li>Deliver world-class education across undergraduate and postgraduate programs.</li>
+          <li>Encourage research, entrepreneurship, and technological innovation.</li>
+          <li>Foster holistic development, moral values, and leadership skills.</li>
+          <li>Engage with communities to promote sustainable development.</li>
+        </ul>
+
+        <h3>Our Core Values</h3>
+        <p>Integrity, Excellence, Innovation, Collaboration, and Social Responsibility.</p>
+
+        <!-- See More Button -->
+        <a href="AboutUs.html" class="btn-see-more">See More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <section class="facts-section">
+    <h1>FACTS ABOUT VAREYA UNIVERSITY</h1>
+
+    <div class="facts-container">
+
+      <div class="fact-card">
+        <div class="fact-number" data-target="1000">0</div>
+        <div class="fact-label">Students</div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-number" data-target="46">0</div>
+        <div class="fact-label">Staff</div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-number" data-target="3">0</div>
+        <div class="fact-label">Colleges</div>
+      </div>
+
+      <div class="fact-card">
+        <div class="fact-number" data-target="15">0</div>
+        <div class="fact-label">Degrees</div>
+      </div>
+
+    </div>
+</section>
+
+ <section class="social-section" id="social">
+    <h2>Social Activities at Our University</h2>
+
+    <div class="social-cards">
+
+      <div class="social-card">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Student Club">
+        <h3>Student Clubs</h3>
+        <p>Join vibrant clubs that help you grow socially, academically, and professionally.</p>
+        <a href="#">Explore clubs →</a>
+      </div>
+
+      <div class="social-card">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Service">
+        <h3>Community Service</h3>
+        <p>Engage in impactful community outreach programs and humanitarian services.</p>
+        <a href="#">Join community service →</a>
+      </div>
+
+      <div class="social-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Leadership Training Camp">
+        <h3>Leadership Training</h3>
+        <p>Develop your leadership skills through structured mentoring and training.</p>
+        <a href="#">Learn more →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FACULTIES SLIDER -->
+  <section class="faculty-section" id="faculty">
+    <h2>Available Faculties</h2>
+
+    <div class="slider-container">
+      <button class="slide-btn left-btn">❮</button>
+
+      <div class="slider">
+        <div class="faculty-card">FACULTY OF SOCIAL & MANAGEMENT SCIENCES</div>
+        <div class="faculty-card">FACULTY OF SCIENCE</div>
+        <div class="faculty-card">FACULTY OF BASIC MEDICAL / HEALTH SCIENCES</div>
+        <div class="faculty-card">FACULTY OF MEDICINE</div>
+        <div class="faculty-card">FACULTY OF ENGINEERING</div>
+      </div>
+
+      <button class="slide-btn right-btn">❯</button>
+    </div>
+
+  </section>
+
+  <section class="sports-section" id="sports">
+  <h2 class="sports-title">Sports</h2>
+
+  <div class="sports-grid">
+
+    <!-- MAIN BIG ARTICLE -->
+    <div class="main-article">
+      <img src="https://images.unsplash.com/photo-1508344928928-7165b67de128?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="University Football">
+      <h3>Building Team Spirit, Strength, and Community</h3>
+      <p>Our university’s football program offers students the perfect blend of recreation, competition, and teamwork. Whether playing in casual matches or organized campus leagues, students enjoy a supportive environment to sharpen their skills, stay active, and build lasting friendships. Football here isn’t just a game — it’s a vibrant part of campus life</p>
+      <div class="meta">
+        <span>Vareya League</span> · <span>Unstoppable</span> · <span>Transcendent</span>
+      </div>
+    </div>
+
+    <!-- RIGHT SMALL ARTICLES -->
+    <div class="side-articles">
+
+      <div class="small-article">
+        <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Table Tennis">
+        <h4>Fast, Fun, and Highly Competitive</h4>
+        <div class="meta"><span>Recreation</span> · <span>Air</span> · <span>Sweat</span></div>
+      </div>
+
+      <div class="small-article">
+        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Basketball">
+        <h4>Energy, Teamwork, and Competitive Spirit</h4>
+        <div class="meta"><span>Basketball</span> · <span>Yesss</span> · <span>Fun</span></div>
+      </div>
+
+      <div class="small-article">
+        <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Volleyball">
+        <h4>. Volleyball energizes campus life and creates lasting connections both on and off the court.</h4>
+        <div class="meta"><span>VolleyBall</span> · <span>Alive</span></div>
+      </div>
+
+      <div class="small-article">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gym Exercise">
+        <h4>Stay Active, Healthy, and Motivated</h4>
+        <div class="meta"><span>Exercise</span> · <span>Health</span></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- NEXT BUTTON -->
+  <button class="next-btn">Next →</button>
+</section>
+
+<section class="admissions-section">
+
+    <div class="admissions-slider">
+
+        <!-- ================= SLIDE 1 — COURSE CARD ================= -->
+        <div class="admission-slide intro-slide gradient-bg">
+
+            <div class="admission-card premium-card">
+
+                <h2 class="vu-title">VAREYA UNIVERSITY</h2>
+                <h3 class="vu-sub">Available Undergraduate Courses</h3>
+
+                <ul class="course-list">
+                    <li>B.Sc. – Accounting</li>
+                    <li>B.Sc. – Banking & Finance</li>
+                    <li>B.Sc. – Biochemistry</li>
+                    <li>B.Sc. – Chemistry (Pure/Applied)</li>
+                    <li>B.Sc. – Computer Science</li>
+                    <li>B.Sc. – Economics</li>
+                    <li>B.Sc – Human Anatomy</li>
+                    <li>B.Sc – Human Physiology</li>
+                    <li>B.Sc. – Marketing</li>
+                    <li>B.Sc. – Mass Communication</li>
+                    <li>B.MLS – Medical Laboratory Science</li>
+                    <li>MB.BS – Medicine & Surgery</li>
+                    <li>B.Sc. – Microbiology</li>
+                    <li>B.NSc. – Nursing Science</li>
+                    <li>B.Sc. – Political Science</li>
+                    <li>B.Sc. – Radiography</li>
+                </ul>
+
+                <div class="admission-buttons">
+                    <button onclick="openModal()" class="apply-btn">Apply Now</button>
+                    <button onclick="openModal()" class="get-admission-btn">Get Admission</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SLIDE 2 — FUTURE VISION ================= -->
+        <div class="admission-slide image-slide slide2">
+            <div class="slide-overlay">
+                <h2 class="slide-title">Become Part of Vareya's Legacy</h2>
+                <p class="slide-desc">A university built for excellence, innovation, leadership & impact.</p>
+                <button class="apply-btn big" onclick="openModal()">Start Application</button>
+            </div>
+        </div>
+
+
+        <!-- ================= SLIDE 3 — SCHOLARSHIPS ================= -->
+        <div class="admission-slide image-slide slide3">
+            <div class="slide-overlay">
+                <h2 class="slide-title">Scholarships & Grants</h2>
+                <p class="slide-desc">Over ₦250 million awarded yearly to outstanding scholars.</p>
+                <button class="apply-btn big" onclick="openModal()">Explore Scholarships</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Slider dots -->
+    <div class="admission-dots">
+        <span class="admission-dot active"></span>
+        <span class="admission-dot"></span>
+        <span class="admission-dot"></span>
+    </div>
+
+</section>
+
+
+<!-- APPLY MODAL -->
+<div class="apply-modal" id="applyModal">
+  <div class="apply-modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h2>Apply to Vareya University</h2>
+    <p>Fill out the short form to begin your admission process.</p>
+
+    <!-- Add name/email with proper IDs and names -->
+    <input class="modal-input" id="modalFullName" name="fullname" placeholder="Full Name">
+    <input class="modal-input" id="modalEmail" name="email" placeholder="Email Address">
+
+    <button class="modal-btn" id="continueApplication">Continue Application</button>
+  </div>
+</div>
+
+
+<section class="form-wrapper">
+  <div class="form-card">
+
+    <h1>Talk to a Vareya Academic Advisor</h1>
+    <p class="subtitle">
+      Fill out the form below and a Vareya Academic Advisor will contact you and guide you on your academic journey.
+    </p>
+
+    <!-- ROLE SELECT -->
+    <div class="role-select">
+      <button class="active" data-role="student">Student</button>
+      <button data-role="guardian">Guardian</button>
+    </div>
+
+    <form>
+
+      <label>First name</label>
+      <input type="text" placeholder="First name" required />
+
+      <label>Last name</label>
+      <input type="text" placeholder="Last name" required />
+
+      <label>Email</label>
+      <input type="email" placeholder="Email" required />
+
+      <!-- PHONE -->
+      <label>Phone number</label>
+      <div class="phone-group">
+        <select id="countryCode">
+          <option value="+234">🇳🇬 +234</option>
+          <option value="+1">🇺🇸 +1</option>
+          <option value="+44">🇬🇧 +44</option>
+          <option value="+233">🇬🇭 +233</option>
+          <option value="+27">🇿🇦 +27</option>
+        </select>
+        <input type="tel" placeholder="Phone number" required />
+      </div>
+
+      <!-- COUNTRY -->
+      <label>Country of residence</label>
+      <select required>
+        <option value="">Select country</option>
+        <option>Nigeria</option>
+        <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Ghana</option>
+        <option>South Africa</option>
+      </select>
+
+      <label>Current school name</label>
+      <input type="text" placeholder="Enter school name" />
+
+      <label>School leaving year</label>
+      <select>
+        <option value="">Select year</option>
+        <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+        <option>2029</option>
+        <option>2030</option>
+        <option>2031</option>
+      </select>
+
+      <label>Questions for your Academic Advisor</label>
+      <textarea placeholder="What would you like to discuss?" maxlength="225"></textarea>
+      <div class="char-count">0 / 225</div>
+
+      <div class="checkboxes">
+        <label>
+          <input type="checkbox" />
+          Remember my details for next time
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          I want to receive study pathways, free resources and admissions guidance from Vareya
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+
+      <p class="policy">
+        By submitting this form, you agree to Vareya’s <a href="#">Privacy Policy</a>.
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+<footer class="uni-footer" id="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="imgs/logo.png" alt="University Logo">
+            <p class="tagline">Raising Visionaries. Building Nations. Shaping Eternity.</p>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="apply.html">Admissions</a></li>
+                <li><a href="#faculty">Faculties & Colleges</a></li>
+                <li><a href="AboutUs.html#accreditation">Research & Innovation</a></li>
+                <li><a href="student-portal.html">Student Life</a></li>
+                <li><a href="#sports">Library</a></li>
+                <li><a href="#social">Campus News</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="how-to-apply.html">Online Programs</a></li>
+                <li><a href="AboutUs.html">International Students</a></li>
+                <li><a href="how-to-apply.html">Scholarships</a></li>
+                <li><a href="AboutUs.html#founders">Staff Directory</a></li>
+                <li><a href="#social">Events & Conferences</a></li>
+                <li><a href="AboutUs.html#alumni">Alumni Network</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Vareya University<br>KM 12 Innovation Drive,<br>Lagos - Nigeria.</p>
+            <p><strong>Phone:</strong> +234 812 345 6789</p>
+            <p><strong>Email:</strong> info@vareyauniversity.edu</p>
+
+           <a href="apply.html" class="apply-btn">Apply Now</a>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Vareya University. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="uni.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | Vareya University</title>
+  <link rel="stylesheet" href="school-portal-main.css"/>
+  <script src="https://kit.fontawesome.com/d5bfae2159.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="portal-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <h2>VAREYA</h2>
+      <span>Admin Portal</span>
+    </div>
+
+    <nav class="menu" id="menu">
+      <a href="#overview" class="active" data-target="overview"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="#students" data-target="students"><i class="fas fa-users"></i> Students</a>
+      <a href="#courses" data-target="courses"><i class="fas fa-book-open"></i> Courses</a>
+      <a href="#finances" data-target="finances"><i class="fas fa-file-invoice-dollar"></i> Finances</a>
+      <a href="#broadcast" data-target="broadcast"><i class="fas fa-bullhorn"></i> Broadcasts</a>
+    </nav>
+
+    <div class="logout-container">
+      <button class="logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-wrapper">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search students, courses...">
+        </div>
+      </div>
+      
+      <div class="topbar-right">
+        <div class="notification-bell">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="profile-dropdown">
+          <div class="profile-info" style="text-align: right;">
+            <strong>Dr. Sarah Connor</strong>
+            <small>Admin - Faculty of Science</small>
+          </div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Admin Profile">
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <div class="content" id="content-area">
+
+      <!-- OVERVIEW SECTION -->
+      <section id="overview" class="section active">
+        <div class="card-header" style="border: none; padding-bottom: 0;">
+          <h2 style="font-size: 1.5rem; color: var(--text-main);">Dashboard Overview</h2>
+        </div>
+        
+        <div class="grid" style="margin-top: 20px;">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Total Students</span>
+              <div class="stat-icon blue"><i class="fas fa-user-graduate"></i></div>
+            </div>
+            <div class="stat-value">12,450</div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +2.5% this semester</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Active Courses</span>
+              <div class="stat-icon yellow"><i class="fas fa-layer-group"></i></div>
+            </div>
+            <div class="stat-value">432</div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12 new courses added</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Revenue (YTD)</span>
+              <div class="stat-icon green"><i class="fas fa-coins"></i></div>
+            </div>
+            <div class="stat-value">₦4.2B</div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +15% vs last year</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Pending Approvals</span>
+              <div class="stat-icon red"><i class="fas fa-clock"></i></div>
+            </div>
+            <div class="stat-value">84</div>
+            <div class="stat-trend down">Requires immediate attention</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Enrollments</h3>
+            <button class="btn-primary" style="background: white; color: var(--text-main); border: 1px solid var(--border);">View All</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Matric No.</th>
+                  <th>Faculty</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="user-cell">
+                      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Alex">
+                      <div>
+                        <strong>Alex Johnson</strong>
+                        <small>alex.j@vareya.edu.ng</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>VU/23/1029</td>
+                  <td>Computing</td>
+                  <td>Oct 12, 2023</td>
+                  <td><span class="badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="user-cell">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mary">
+                      <div>
+                        <strong>Mary Cole</strong>
+                        <small>mary.c@vareya.edu.ng</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>VU/23/1045</td>
+                  <td>Medicine</td>
+                  <td>Oct 11, 2023</td>
+                  <td><span class="badge pending">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- STUDENTS SECTION -->
+      <section id="students" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Student Directory</h3>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn-primary" style="background: white; color: var(--text-main); border: 1px solid var(--border);"><i class="fas fa-filter"></i> Filter</button>
+              <button class="btn-primary"><i class="fas fa-plus"></i> Add Student</button>
+            </div>
+          </div>
+          <div style="overflow-x: auto;">
+            <table id="admin-student-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Matric No.</th>
+                  <th>Department</th>
+                  <th>Level</th>
+                  <th>CGPA</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES SECTION -->
+      <section id="courses" class="section">
+        <div class="grid" style="grid-template-columns: 1fr 2fr;">
+          <div class="card">
+            <div class="card-header">
+              <h3>Add New Course</h3>
+            </div>
+            <form id="admin-course-form">
+              <div class="form-group">
+                <label>Course Code</label>
+                <input type="text" id="ac-code" placeholder="e.g. MTH301" required>
+              </div>
+              <div class="form-group">
+                <label>Course Title</label>
+                <input type="text" id="ac-title" placeholder="e.g. Advanced Calculus" required>
+              </div>
+              <div class="form-group">
+                <label>Units</label>
+                <input type="number" id="ac-units" min="1" max="6" required>
+              </div>
+              <div class="form-group">
+                <label>Lecturer in Charge</label>
+                <select id="ac-lecturer">
+                  <option>Prof. A. Smith</option>
+                  <option>Dr. B. Wayne</option>
+                  <option>Dr. C. Kent</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Create Course</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Course Directory</h3>
+            </div>
+            <div style="overflow-x: auto;">
+              <table id="admin-course-table">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Title</th>
+                    <th>Units</th>
+                    <th>Lecturer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINANCES SECTION -->
+      <section id="finances" class="section">
+        <div class="card">
+          <div class="card-header">
+            <h3>Fee Payment Tracking</h3>
+            <button class="btn-primary"><i class="fas fa-file-export"></i> Export Report</button>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Student</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>TXN-982341</td>
+                  <td>Alex Johnson</td>
+                  <td>₦450,000</td>
+                  <td>Oct 10, 2023</td>
+                  <td><span class="badge active">Cleared</span></td>
+                </tr>
+                <tr>
+                  <td>TXN-982342</td>
+                  <td>Mary Cole</td>
+                  <td>₦200,000</td>
+                  <td>Oct 11, 2023</td>
+                  <td><span class="badge pending">Part-Payment</span></td>
+                </tr>
+                <tr>
+                  <td>TXN-982345</td>
+                  <td>John Doe</td>
+                  <td>₦450,000</td>
+                  <td>Oct 12, 2023</td>
+                  <td><span class="badge inactive">Failed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- BROADCAST SECTION -->
+      <section id="broadcast" class="section">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <div class="card-header">
+            <h3>Send Global Announcement</h3>
+          </div>
+          <form onsubmit="event.preventDefault(); alert('Broadcast sent to all students successfully.'); this.reset();">
+            <div class="form-group">
+              <label>Target Audience</label>
+              <select>
+                <option>All Students</option>
+                <option>All Staff</option>
+                <option>Specific Faculty...</option>
+                <option>Specific Level...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Announcement Subject" required>
+            </div>
+            <div class="form-group">
+              <label>Message Content</label>
+              <textarea rows="6" placeholder="Type your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Broadcast</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="school-portal-main.js"></script>
+</body>
+</html>
